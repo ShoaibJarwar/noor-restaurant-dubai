@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { blurDataURL } from "@/lib/blur";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 import GalleryGrid from "@/components/GalleryGrid";
@@ -9,6 +10,11 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "A visual look inside NOOR Dubai — the dining room, the kitchen, the dishes, and the details.",
+  openGraph: {
+    images: [
+      "https://images.unsplash.com/photo-1519690889869-e705e59f72e1?auto=format&fit=crop&w=1200&q=80",
+    ],
+  },
 };
 
 export default function GalleryPage() {
@@ -22,6 +28,8 @@ export default function GalleryPage() {
           priority
           sizes="100vw"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 lg:px-10">

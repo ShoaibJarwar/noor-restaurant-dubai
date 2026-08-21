@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { blurDataURL } from "@/lib/blur";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 
@@ -7,6 +8,11 @@ export const metadata: Metadata = {
   title: "Our Story",
   description:
     "The story behind NOOR Dubai: contemporary Arabian dining inspired by the Gulf, its ingredients, and its people.",
+  openGraph: {
+    images: [
+      "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1200&q=80",
+    ],
+  },
 };
 
 const ingredients = [
@@ -30,6 +36,8 @@ export default function AboutPage() {
           priority
           sizes="100vw"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 lg:px-10">
@@ -103,6 +111,8 @@ export default function AboutPage() {
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
+              placeholder="blur"
+              blurDataURL={blurDataURL()}
             />
           </FadeIn>
           <FadeIn delay={1}>

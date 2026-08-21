@@ -11,6 +11,7 @@ const labelClasses =
 
 export default function ReservationForm() {
   const [submitted, setSubmitted] = useState(false);
+  const today = new Date().toISOString().split("T")[0];
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,7 +66,7 @@ export default function ReservationForm() {
           <label htmlFor="date" className={labelClasses}>
             Date
           </label>
-          <input id="date" required type="date" className={`${inputClasses} mt-2`} />
+          <input id="date" required type="date" min={today} className={`${inputClasses} mt-2`} />
         </div>
         <div>
           <label htmlFor="time" className={labelClasses}>

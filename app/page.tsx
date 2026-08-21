@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { blurDataURL } from "@/lib/blur";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, Mail, ChevronDown } from "lucide-react";
 import Button from "@/components/Button";
@@ -21,6 +22,8 @@ export default function HomePage() {
           priority
           sizes="100vw"
           className="object-cover animate-kenburns"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-charcoal/20" />
 
@@ -160,6 +163,8 @@ export default function HomePage() {
           fill
           sizes="100vw"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-charcoal/45" />
         <FadeIn className="relative z-10 px-6 text-center">
@@ -217,6 +222,8 @@ export default function HomePage() {
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
+              placeholder="blur"
+              blurDataURL={blurDataURL()}
             />
           </FadeIn>
           <FadeIn delay={1} className="order-1 lg:order-2">

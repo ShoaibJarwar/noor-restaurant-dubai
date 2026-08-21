@@ -53,6 +53,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-current={active ? "page" : undefined}
                   className={`relative text-[11px] tracking-[0.2em] uppercase transition-colors duration-300 ${
                     active ? "text-gold" : "text-ivory/85 hover:text-gold"
                   }`}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { blurDataURL } from "@/lib/blur";
 import { MapPin, Phone, Mail } from "lucide-react";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
   title: "Contact & Reservations",
   description:
     "Reserve a table at NOOR Dubai, or reach our team by phone or email. Downtown Dubai, United Arab Emirates.",
+  openGraph: {
+    images: [
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80",
+    ],
+  },
 };
 
 export default function ContactPage() {
@@ -23,6 +29,8 @@ export default function ContactPage() {
           priority
           sizes="100vw"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 lg:px-10">

@@ -10,6 +10,7 @@ const labelClasses = "text-[11px] uppercase tracking-[0.18em] text-ivory/50";
 
 export default function PrivateDiningForm() {
   const [submitted, setSubmitted] = useState(false);
+  const today = new Date().toISOString().split("T")[0];
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -73,7 +74,7 @@ export default function PrivateDiningForm() {
           <label htmlFor="pd-date" className={labelClasses}>
             Preferred Date
           </label>
-          <input id="pd-date" required type="date" className={`${inputClasses} mt-2`} />
+          <input id="pd-date" required type="date" min={today} className={`${inputClasses} mt-2`} />
         </div>
         <div>
           <label htmlFor="pd-guests" className={labelClasses}>

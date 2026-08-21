@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { blurDataURL } from "@/lib/blur";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 import PrivateDiningForm from "@/components/PrivateDiningForm";
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
   title: "Private Dining",
   description:
     "Private dining at NOOR Dubai — designed for celebrations, corporate dinners, weddings and unforgettable evenings.",
+  openGraph: {
+    images: [
+      "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1200&q=80",
+    ],
+  },
 };
 
 const offerings = [
@@ -48,6 +54,8 @@ export default function PrivateDiningPage() {
           priority
           sizes="100vw"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 lg:px-10">

@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { blurDataURL } from "@/lib/blur";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 import MenuCategory from "@/components/MenuCategory";
+import MenuCategoryNav from "@/components/MenuCategoryNav";
 import { menu } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
     "Explore the NOOR Dubai menu: contemporary expressions of Gulf and Middle Eastern flavors, from mezze to dessert.",
+  openGraph: {
+    images: [
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=80",
+    ],
+  },
 };
 
 export default function MenuPage() {
@@ -22,6 +29,8 @@ export default function MenuPage() {
           priority
           sizes="100vw"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 lg:px-10">
@@ -37,19 +46,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      <div className="sticky top-[64px] z-30 border-b border-foreground/10 bg-background/95 backdrop-blur-sm" style={{paddingTop: "10px"}}>
-        <div className="mx-auto flex max-w-7xl gap-8 overflow-x-auto px-6 py-4 lg:px-10">
-          {menu.map((cat) => (
-            <a
-              key={cat.id}
-              href={`#${cat.id}`}
-              className="whitespace-nowrap text-[11px] uppercase tracking-[0.2em] text-foreground/55 transition-colors hover:text-gold"
-            >
-              {cat.label}
-            </a>
-          ))}
-        </div>
-      </div>
+      <MenuCategoryNav categories={menu} />
 
       <section className="mx-auto max-w-3xl px-6 py-4 lg:px-10">
         {menu.map((category) => (
