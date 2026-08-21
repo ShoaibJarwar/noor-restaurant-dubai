@@ -36,7 +36,7 @@ export default function MenuCategoryNav({ categories }: { categories: MenuCatego
 
   return (
     <div className="sticky top-[64px] z-30 border-b border-foreground/10 bg-background/95 backdrop-blur-sm" style={{paddingTop:"10px"}}>
-      <div className="mx-auto flex max-w-7xl gap-8 overflow-x-auto px-6 py-4 lg:px-10" >
+      <div className="mx-auto flex max-w-7xl gap-8 overflow-x-auto px-6 py-4 lg:px-10">
         {categories.map((cat) => (
           <a
             key={cat.id}
