@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://noordubai.ae"),
+  metadataBase: new URL("https://noor-restaurant-dubai.vercel.app"),
   title: {
     default: "NOOR Dubai | Contemporary Arabian Dining",
     template: "%s | NOOR Dubai",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "NOOR Dubai | Contemporary Arabian Dining",
     description:
       "NOOR is a contemporary Arabian restaurant in Dubai, UAE, bringing the flavors and traditions of the region to the modern table.",
-    url: "https://noordubai.ae",
+    url: "https://noor-restaurant-dubai.vercel.app",
     siteName: "NOOR Dubai",
     locale: "en_AE",
     type: "website",

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://noordubai.ae";
+const baseUrl = "https://noor-restaurant-dubai.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/menu", "/about", "/gallery", "/private-dining", "/contact"];
