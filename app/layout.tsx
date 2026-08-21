@@ -58,10 +58,9 @@ export const metadata: Metadata = {
       "A contemporary Arabian restaurant in Dubai, UAE, bringing the flavors of the region to the modern table.",
   },
   verification: {
-    google: "UnV-Ns9Fb8dD5acgMGEixK9dFANNlPEfQyfkbn86z9M",
+    google: "orqsH3Gz3_w2F6JbqzZu7uACcO80HtKWNsGTN0iqkUE",
   },
 };
-
 const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
